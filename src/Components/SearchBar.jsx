@@ -1,0 +1,25 @@
+import logo from '../../src/assets/images/mylogo.png';
+import { FaCartPlus } from "react-icons/fa6";
+import { FiSearch } from "react-icons/fi";
+
+const SearchBar = () => {
+    return (
+        <div className='flex w-[80%] mx-auto justify-between items-center my-4'>
+            <div><img src={logo} alt="logo" /></div>
+            <div className='grow mx-5'>
+                <label className="input input-bordered flex items-center relative">
+                    <input type="text" className="grow" placeholder="Search Your Products" />
+                    <div className='p-4 bg-red-500 absolute top-0 right-0 rounded-r-lg cursor-pointer'>
+                        <FiSearch className='text-white' />
+                    </div>
+                </label>
+
+            </div>
+            <div>
+                <FaCartPlus className='text-4xl' />
+            </div>
+        </div>
+    );
+};
+
+export default SearchBar;
