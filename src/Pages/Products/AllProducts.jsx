@@ -14,11 +14,22 @@ const AllProducts = () => {
     }, [])
 
     return (
-        <div className="my-10 grid grid-cols-4 gap-3">
-            {
-                products.map((item) => <Card key={item.id} item={item}></Card>)
-            }
+        <div>
+            <div className="mt-10 grid grid-cols-4 gap-4">
+                {
+                    products.map((item) => <Card key={item.id} item={item}></Card>)
+                }
+            </div>
+            <div className="flex justify-center my-10">
+                <div className="join">
+                    <input className="join-item btn btn-square" type="radio" name="options" aria-label="1" checked />
+                    <input className="join-item btn btn-square" type="radio" name="options" aria-label="2" />
+                    <input className="join-item btn btn-square" type="radio" name="options" aria-label="3" />
+                    <input className="join-item btn btn-square" type="radio" name="options" aria-label="4" />
+                </div>
+            </div>
         </div>
+
     );
 };
 

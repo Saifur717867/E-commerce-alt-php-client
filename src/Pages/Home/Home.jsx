@@ -1,5 +1,6 @@
 
 import Products from "../Products/Products";
+import PaymentImage from "./PaymentImage";
 import Slider from "./Slider";
 
 
@@ -8,7 +9,7 @@ const Home = () => {
         <div>
             <Slider></Slider>
             <Products></Products>
-
+            <PaymentImage></PaymentImage>
         </div>
     );
 };
