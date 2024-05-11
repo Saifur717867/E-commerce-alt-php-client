@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../LayOut/MainLayout";
 import Error from "../Pages/Error/Error";
 import Home from "../Pages/Home/Home";
+import AllProductShow from "../Pages/AllProductShow/AllProductShow";
+import ProductsDetails from "../Pages/Products-Details/ProductsDetails";
 
 
 
@@ -14,6 +16,15 @@ export const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
+            },
+            {
+                path: "/allProducts",
+                element: <AllProductShow></AllProductShow>,
+            },
+            {
+                path: "/allProducts/:id",
+                element: <ProductsDetails></ProductsDetails>,
+                loader: ({ params }) => fetch(`https://fakestoreapi.com/products/${params.id}`)
             }
         ]
     },

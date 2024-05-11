@@ -19,7 +19,7 @@ const Slider = () => {
                 <div className="col-span-1">
                     <ul className="text-md font-semibold uppercase text-purple-600">
                         {
-                            nav.map((item) => <li className="cursor-pointer my-3">
+                            nav.map((item) => <li key={item.title} className="cursor-pointer my-3">
                                 <div className="flex items-center gap-3">
                                     <div>
                                         {item.title}

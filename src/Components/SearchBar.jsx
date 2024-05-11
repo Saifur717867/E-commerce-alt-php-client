@@ -1,11 +1,16 @@
 import logo from '../../src/assets/images/mylogo.png';
 import { FaCartPlus } from "react-icons/fa6";
 import { FiSearch } from "react-icons/fi";
+import { NavLink } from 'react-router-dom';
 
 const SearchBar = () => {
     return (
         <div className='flex w-[80%] mx-auto justify-between items-center my-4'>
-            <div><img src={logo} alt="logo" /></div>
+            <div>
+                <NavLink to="/">
+                    <img src={logo} alt="logo" />
+                </NavLink>
+            </div>
             <div className='grow mx-5'>
                 <label className="input input-bordered flex items-center relative">
                     <input type="text" className="grow" placeholder="Search Your Products" />

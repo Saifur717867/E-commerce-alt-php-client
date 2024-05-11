@@ -22,7 +22,7 @@ const NavBar = () => {
                 <div>
                     <ul className="text-xl font-semibold uppercase text-white flex items-center space-x-7">
                         {
-                            nav.map((item) => <li className="cursor-pointer flex justify-between">{item.title}</li>)
+                            nav.map((item) => <li key={item.title} className="cursor-pointer flex justify-between">{item.title}</li>)
                         }
                     </ul>
                 </div>

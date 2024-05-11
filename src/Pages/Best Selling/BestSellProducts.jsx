@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import BestSellCard from "./BestSellCard";
 
-const BestSellProducts = () => {
+const BestSellProducts = ({ item }) => {
     const [products, setProducts] = useState([]);
     console.log(products);
 
@@ -12,9 +12,11 @@ const BestSellProducts = () => {
     }, [])
     return (
         <div>
-            {
-                products.slice(0, 4).map((item) => <BestSellCard item={item}></BestSellCard>)
-            }
+            <div>
+                {
+                    products.slice(0, 4).map((item) => <BestSellCard key={item.id} item={item}></BestSellCard>)
+                }
+            </div>
         </div>
     );
 };
