@@ -17,7 +17,7 @@ const Products = () => {
                 <Features title="All Products"></Features>
                 <AllProducts></AllProducts>
             </div>
-            <div className="grid grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <div >
                     <div className="flex justify-between items-end">
                         <BestSell title="Best Selling"></BestSell>
