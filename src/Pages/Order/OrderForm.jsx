@@ -20,7 +20,7 @@ const OrderForm = () => {
                     <option value="120">Out Side of Dhaka - 120</option>
                     <option value="80">In side of Dhaka - 80</option>
                 </select>
-                <input className="rounded-md w-full px-4 py-2 bg-green-500" type="submit" />
+                <button className="rounded-md w-full px-4 py-2 text-white bg-green-400 hover:bg-green-700" type="submit">Confirm Your Order</button>
             </form>
         </div>
     );
