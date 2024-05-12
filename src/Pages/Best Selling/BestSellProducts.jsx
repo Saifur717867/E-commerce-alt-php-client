@@ -3,7 +3,7 @@ import BestSellCard from "./BestSellCard";
 
 const BestSellProducts = ({ item }) => {
     const [products, setProducts] = useState([]);
-    console.log(products);
+    // console.log(products);
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
