@@ -5,6 +5,8 @@ import Home from "../Pages/Home/Home";
 import AllProductShow from "../Pages/AllProductShow/AllProductShow";
 import ProductsDetails from "../Pages/Products-Details/ProductsDetails";
 import OrderNow from "../Pages/Order/OrderNow";
+import DashboardLayOut from "../LayOut/DashboardLayOut";
+import Dashboard from "../Dashboard/Dashboard-pages/Dashboard";
 
 
 
@@ -33,4 +35,46 @@ export const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: "dashboard",
+        element: <DashboardLayOut></DashboardLayOut>,
+        children: [
+            {
+                path: "admin",
+                element: <Dashboard></Dashboard>
+            },
+            {
+                path: "product",
+                element: <Dashboard></Dashboard>
+            },
+            {
+                path: "store",
+                element: <Dashboard></Dashboard>
+            },
+            {
+                path: "courier",
+                element: <Dashboard></Dashboard>
+            },
+            {
+                path: "order",
+                element: <Dashboard></Dashboard>
+            },
+            {
+                path: "invoiced",
+                element: <Dashboard></Dashboard>
+            },
+            {
+                path: "delivered",
+                element: <Dashboard></Dashboard>
+            },
+            {
+                path: "user",
+                element: <Dashboard></Dashboard>
+            },
+            {
+                path: "report",
+                element: <Dashboard></Dashboard>
+            },
+        ]
+    }
 ]);
