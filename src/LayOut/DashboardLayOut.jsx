@@ -9,13 +9,13 @@ const DashboardLayOut = () => {
     return (
         <div>
             <DashBoardHead></DashBoardHead>
-            <div className="flex justify-between gap-6">
-                <div className="w-[18%] min-h-screen bg-slate-100 shadow-lg shadow-slate-900/100 shadow-b-2 shadow-r-[3px] -shadow-spread-2">
+            <div className="flex justify-between">
+                <div className="w-[15%] min-h-screen bg-slate-100 shadow-lg shadow-slate-900/100 shadow-b-2 shadow-r-[3px] -shadow-spread-2">
                     <h4 className="uppercase text-sm font-bold py-3 ml-4">Navigation</h4>
                     <div>
                         <ul>
                             <li className="font-semibold"><NavLink to='/dashboard/admin' className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 block" : "py-3 block "
+                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 text-purple-500 block" : "py-3 block "
                             }>
                                 <div className="flex justify-start items-center ml-6">
                                     <FiAirplay className="mr-4 text-xl"></FiAirplay >
@@ -23,7 +23,7 @@ const DashboardLayOut = () => {
                                 </div>
                             </NavLink></li>
                             <li className="font-semibold"><NavLink to='/dashboard/product' className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 block" : "py-3 block"
+                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 text-purple-500 block" : "py-3 block"
                             }>
                                 <div className="flex justify-start items-center ml-6">
                                     <FiGlobe className="mr-4 text-xl"></FiGlobe >
@@ -31,7 +31,7 @@ const DashboardLayOut = () => {
                                 </div>
                             </NavLink></li>
                             <li className="font-semibold"><NavLink to='/dashboard/store' className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 block" : "py-3 block "
+                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 text-purple-500 block" : "py-3 block "
                             }>
                                 <div className="flex justify-start items-center ml-6">
                                     <FiPackage className="mr-4 text-xl"></FiPackage >
@@ -39,7 +39,7 @@ const DashboardLayOut = () => {
                                 </div>
                             </NavLink></li>
                             <li className="font-semibold"><NavLink to='/dashboard/courier' className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 block" : "py-3 block"
+                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 text-purple-500 block" : "py-3 block"
                             }>
                                 <div className="flex justify-start items-center ml-6">
                                     <FiTruck className="mr-4 text-xl"></FiTruck>
@@ -47,7 +47,7 @@ const DashboardLayOut = () => {
                                 </div>
                             </NavLink></li>
                             <li className="font-semibold"><NavLink to='/dashboard/order' className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 block" : "py-3 block "
+                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 text-purple-500 block" : "py-3 block "
                             }>
                                 <div className="flex justify-start items-center ml-6">
                                     <FiShoppingCart className="mr-4 text-xl"></FiShoppingCart >
@@ -55,7 +55,7 @@ const DashboardLayOut = () => {
                                 </div>
                             </NavLink></li>
                             <li className="font-semibold"><NavLink to='/dashboard/invoiced' className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 block" : "py-3 block "
+                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 text-purple-500 block" : "py-3 block "
                             }>
                                 <div className="flex justify-start items-center ml-6">
                                     <FaFileInvoice className="mr-4 text-xl"></FaFileInvoice >
@@ -63,7 +63,7 @@ const DashboardLayOut = () => {
                                 </div>
                             </NavLink></li>
                             <li className="font-semibold"><NavLink to='/dashboard/delivered' className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 block" : "py-3 block"
+                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 text-purple-500 block" : "py-3 block"
                             }>
                                 <div className="flex justify-start items-center ml-6">
                                     <FaTruck className="mr-4 text-xl"></FaTruck >
@@ -71,7 +71,7 @@ const DashboardLayOut = () => {
                                 </div>
                             </NavLink></li>
                             <li className="font-semibold"><NavLink to='/dashboard/user' className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 block" : "py-3 block"
+                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 text-purple-500 block" : "py-3 block"
                             }>
                                 <div className="flex justify-start items-center ml-6">
                                     <FaUser className="mr-4 text-xl"></FaUser>
@@ -79,7 +79,7 @@ const DashboardLayOut = () => {
                                 </div>
                             </NavLink></li>
                             <li className="font-semibold"><NavLink to='/dashboard/report' className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 block" : "py-3 block"
+                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 text-purple-500 block" : "py-3 block"
                             }>
                                 <div className="flex justify-start items-center ml-6">
                                     <FiFileText className="mr-4 text-xl"></FiFileText >
@@ -89,7 +89,7 @@ const DashboardLayOut = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="mt-6">
+                <div className="mt-6 px-6 w-full">
                     <Dashboard></Dashboard>
                 </div>
             </div>

@@ -1,16 +1,10 @@
-import React, { useState } from "react";
-import "react-modern-calendar-datepicker/lib/DatePicker.css";
-import DatePicker from "react-modern-calendar-datepicker";
+import React from 'react';
 
 const DateShow = () => {
-    const [selectedDay, setSelectedDay] = useState(null);
     return (
-        <DatePicker
-            value={selectedDay}
-            onChange={setSelectedDay}
-            inputPlaceholder="Select a day"
-            shouldHighlightWeekends
-        />
+        <div>
+            <input className='border-2 shadow-lg shadow-slate-900/20 shadow-b-2 shadow-r-[3px] -shadow-spread-2 px-3 py-2 rounded-md' type='date'></input>
+        </div>
     );
 };
 
