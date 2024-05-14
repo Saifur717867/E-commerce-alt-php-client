@@ -7,6 +7,8 @@ import ProductsDetails from "../Pages/Products-Details/ProductsDetails";
 import OrderNow from "../Pages/Order/OrderNow";
 import DashboardLayOut from "../LayOut/DashboardLayOut";
 import Dashboard from "../Dashboard/Dashboard-pages/Dashboard";
+import AddProducts from "../AddProducts/AddProducts";
+import AddStore from "../AddStore/AddStore";
 
 
 
@@ -45,11 +47,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: "product",
-                element: <Dashboard></Dashboard>
+                element: <AddProducts></AddProducts>
             },
             {
                 path: "store",
-                element: <Dashboard></Dashboard>
+                element: <AddStore></AddStore>
             },
             {
                 path: "courier",

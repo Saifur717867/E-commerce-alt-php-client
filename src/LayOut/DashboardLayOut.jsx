@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import DashBoardHead from "../Dashboard/DashBoardHead";
 import { FaUser, FaFileInvoice, FaTruck } from "react-icons/fa";
 import { FiTruck, FiGlobe, FiPackage, FiAirplay, FiShoppingCart, FiFileText } from "react-icons/fi";
@@ -90,7 +90,7 @@ const DashboardLayOut = () => {
                     </div>
                 </div>
                 <div className="mt-6 px-6 w-full">
-                    <Dashboard></Dashboard>
+                    <Outlet></Outlet>
                 </div>
             </div>
 
