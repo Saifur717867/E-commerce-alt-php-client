@@ -20,8 +20,11 @@ const SearchBar = () => {
                 </label>
 
             </div>
-            <div>
+            <div className='flex justify-between items-center gap-6'>
                 <FaCartPlus className='text-4xl' />
+                <NavLink to="/login">
+                    <button className='btn btn-success'>Log In</button>
+                </NavLink>
             </div>
         </div>
     );
