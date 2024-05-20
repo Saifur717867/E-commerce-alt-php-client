@@ -1,6 +1,17 @@
-import userImg from "../assets/images/user-1.jpg"
+// import userImg from "../../../src/assets/images/user-1jpg";
+
+import useAuth from "../../Hooks/useAuth";
 
 const DashBoardHead = () => {
+
+    const { user, logOut, loading } = useAuth();
+
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
+
     return (
         <div>
             <nav className="bg-blue-900 py-4 shadow shadow-slate-500/50">
@@ -11,8 +22,9 @@ const DashBoardHead = () => {
                     <div>
                         <div></div>
                         <div className="flex justify-between items-center gap-6">
-                            <img className="w-[40px] h-auto" src={userImg} alt="user" />
+                            {/* <img className="w-[40px] h-auto" src={userImg} alt="user" /> */}
                             <p className="text-white">user name</p>
+                            <button onClick={handleSignOut} className="btn btn-success">Sign out</button>
                         </div>
                     </div>
                 </div>

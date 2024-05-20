@@ -16,6 +16,8 @@ import Invoiced from "../Invoice/Invoiced";
 import Delivered from "../Delivered/Delivered";
 import User from "../User/User";
 import ReportAll from "../Report/ReportAll";
+import PrivateRouter from "./PrivateRouter";
+import LogIn from './../Dashboard/Login/LogIn';
 
 
 
@@ -41,12 +43,17 @@ export const router = createBrowserRouter([
             {
                 path: "/order",
                 element: <OrderNow></OrderNow>
+            },
+
+            {
+                path: 'login',
+                element: <LogIn></LogIn>
             }
         ]
     },
     {
         path: "dashboard",
-        element: <DashboardLayOut></DashboardLayOut>,
+        element: <PrivateRouter><DashboardLayOut></DashboardLayOut></PrivateRouter>,
         children: [
             {
                 path: "admin",

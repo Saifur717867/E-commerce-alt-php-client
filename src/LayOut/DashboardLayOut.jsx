@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import DashBoardHead from "../Dashboard/DashBoardHead";
+import DashBoardHead from "../Dashboard/Dashboard-pages/DashBoardHead";
 import { FaUser, FaFileInvoice, FaTruck } from "react-icons/fa";
 import { FiTruck, FiGlobe, FiPackage, FiAirplay, FiShoppingCart, FiFileText } from "react-icons/fi";
 
