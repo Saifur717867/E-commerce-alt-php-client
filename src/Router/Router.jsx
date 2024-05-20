@@ -9,6 +9,13 @@ import DashboardLayOut from "../LayOut/DashboardLayOut";
 import Dashboard from "../Dashboard/Dashboard-pages/Dashboard";
 import AddProducts from "../AddProducts/AddProducts";
 import AddStore from "../AddStore/AddStore";
+import AddCourier from "../AddCourier/AddCourier";
+import AddOrder from "../AddOrder/AddOrder";
+import AddNewOrder from "../AddOrder/AddNewOrder";
+import Invoiced from "../Invoice/Invoiced";
+import Delivered from "../Delivered/Delivered";
+import User from "../User/User";
+import ReportAll from "../Report/ReportAll";
 
 
 
@@ -55,27 +62,43 @@ export const router = createBrowserRouter([
             },
             {
                 path: "courier",
-                element: <Dashboard></Dashboard>
+                element: <AddCourier></AddCourier>
             },
             {
-                path: "order",
-                element: <Dashboard></Dashboard>
+                path: "addOrder",
+                element: <AddOrder></AddOrder>
+            },
+            {
+                path: "addOrder/createOrder",
+                element: <AddNewOrder></AddNewOrder>
             },
             {
                 path: "invoiced",
-                element: <Dashboard></Dashboard>
+                element: <Invoiced></Invoiced>
+            },
+            {
+                path: "invoiced/createOrder",
+                element: <AddNewOrder></AddNewOrder>
             },
             {
                 path: "delivered",
-                element: <Dashboard></Dashboard>
+                element: <Delivered></Delivered>
+            },
+            {
+                path: "delivered/createOrder",
+                element: <AddNewOrder></AddNewOrder>
             },
             {
                 path: "user",
-                element: <Dashboard></Dashboard>
+                element: <User></User>
+            },
+            {
+                path: "user/createOrder",
+                element: <AddNewOrder></AddNewOrder>
             },
             {
                 path: "report",
-                element: <Dashboard></Dashboard>
+                element: <ReportAll></ReportAll>
             },
         ]
     }

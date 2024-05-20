@@ -3,8 +3,9 @@ import ImagesInput from "./ImagesInput";
 
 
 const AddProductForm = () => {
+
     return (
-        <div>
+        <div className="overflow-x-auto">
             <h3 className="text-xl font-medium">Add New Product</h3>
             <hr className="mt-4 mb-4" />
             <div className="flex justify-between gap-6">

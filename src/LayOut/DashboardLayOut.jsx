@@ -2,7 +2,6 @@ import { NavLink, Outlet } from "react-router-dom";
 import DashBoardHead from "../Dashboard/DashBoardHead";
 import { FaUser, FaFileInvoice, FaTruck } from "react-icons/fa";
 import { FiTruck, FiGlobe, FiPackage, FiAirplay, FiShoppingCart, FiFileText } from "react-icons/fi";
-import Dashboard from "../Dashboard/Dashboard-pages/Dashboard";
 
 
 const DashboardLayOut = () => {
@@ -46,7 +45,7 @@ const DashboardLayOut = () => {
                                     <p>Courier</p>
                                 </div>
                             </NavLink></li>
-                            <li className="font-semibold"><NavLink to='/dashboard/order' className={({ isActive, isPending }) =>
+                            <li className="font-semibold"><NavLink to='/dashboard/addOrder' className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 text-purple-500 block" : "py-3 block "
                             }>
                                 <div className="flex justify-start items-center ml-6">
