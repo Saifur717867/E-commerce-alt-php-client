@@ -15,11 +15,11 @@ const ProductsDetails = () => {
     const totalNetPrice = netPrice.toFixed(2)
     return (
         <div className="w-[80%] mx-auto p-10">
-            <div className="flex justify-center gap-10">
-                <div className="border border-slate-300 p-6">
+            <div className="flex flex-col md:flex-row justify-center gap-10">
+                <div className="border w-full md:w-[50%] border-slate-300 p-6">
                     <img src={image} className="w-[80%] h-auto" alt="product" />
                 </div>
-                <div className="border border-slate-300 p-6">
+                <div className="border w-full md:w-[50%] border-slate-300 p-6">
                     <h1 className="text-3xl font-semibold mb-6">{title}</h1>
                     <div className="my-6">
                         <p className="text-2xl text-red-500 font-bold">Price: <span className="line-through">${price}</span></p>

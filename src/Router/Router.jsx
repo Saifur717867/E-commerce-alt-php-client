@@ -18,6 +18,7 @@ import User from "../User/User";
 import ReportAll from "../Report/ReportAll";
 import PrivateRouter from "./PrivateRouter";
 import LogIn from './../Dashboard/Login/LogIn';
+import SignUp from "../Dashboard/SignUp/SignUp";
 
 
 
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
             },
 
             {
+                path: 'signUp',
+                element: <SignUp></SignUp>
+            },
+            {
                 path: 'login',
                 element: <LogIn></LogIn>
             }
@@ -53,7 +58,7 @@ export const router = createBrowserRouter([
     },
     {
         path: "dashboard",
-        element: <PrivateRouter><DashboardLayOut></DashboardLayOut></PrivateRouter>,
+        element: <DashboardLayOut></DashboardLayOut>,
         children: [
             {
                 path: "admin",

@@ -7,6 +7,8 @@ const DashBoardHead = () => {
     const { user, logOut, loading } = useAuth();
 
     const handleSignOut = () => {
+        console.log('clicked');
+
         logOut()
             .then()
             .catch()
@@ -24,7 +26,7 @@ const DashBoardHead = () => {
                         <div className="flex justify-between items-center gap-6">
                             {/* <img className="w-[40px] h-auto" src={userImg} alt="user" /> */}
                             <p className="text-white">user name</p>
-                            <button onClick={handleSignOut} className="btn btn-success">Sign out</button>
+                            <button onClick={handleSignOut} className="btn btn-success text-white">Sign out</button>
                         </div>
                     </div>
                 </div>

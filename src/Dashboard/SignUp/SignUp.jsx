@@ -1,15 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
-import FavAndTitle from "../../components/helmet/FavAndTitle";
+import FavAndTitle from "../../Components/FavAndTitle";
 import { FaFacebookF, FaGoogle, FaLinkedinIn } from "react-icons/fa";
-// import img from "../../../images/signup.png";
-// import coverImg from "../../../images/signup.png";
-// import CoverHead from "../../components/coverimage/CoverHead";
+import img from "../../../src/assets/images/signup.png";
+import coverImg from "../../../src/assets/images/signin.png";
+import CoverHead from "../../Components/CoverHead";
 import app from "../../Firebase/firebase.config";
 import { GoogleAuthProvider, getAuth, signInWithPopup, updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
-import useAuth from "../../hook/auth/useAuth";
-import { upLoadImage } from "../../components/utils/uploadImage";
-import useAxiosPublic from "../../hook/useAxiosPublic";
+import useAuth from "../../Hooks/useAuth";
+// import { upLoadImage } from "../../Components/uploadImage";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 
 
@@ -28,11 +28,11 @@ const SignUp = () => {
         const email = e.target.email.value;
         const name = e.target.name.value;
         const password = e.target.password.value;
-        const photo = e.target.photo.files[0];
-        const image = await upLoadImage(photo);
+        // const photo = e.target.photo.files[0];
+        // const image = await upLoadImage(photo);
         // console.log(image)
-        console.log(image.data.display_url)
-        const loadedImage = image.data.display_url
+        // console.log(image.data.display_url)
+        // const loadedImage = image.data.display_url
         // console.log({ email, name, password, loadedImage })
         if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/.test(password)) {
             Swal.fire({
@@ -41,19 +41,19 @@ const SignUp = () => {
                 text: 'Minimum six characters, at least one uppercase letter, one lowercase letter, one number and one special character!',
             })
         } else {
-            await createUser(email, password, name, loadedImage)
+            await createUser(email, password, name)
                 .then(result => {
                     console.log(result.user)
                     updateProfile(result.user, {
                         displayName: name,
-                        photoURL: loadedImage,
+                        // photoURL: loadedImage,
                     })
                         .then(() => {
                             console.log('profile update')
                             const userInfo = {
                                 name: name,
                                 email: email,
-                                photo: loadedImage,
+                                // photo: loadedImage,
                                 role: 'member'
                             }
                             axiosPublic.post('/users', userInfo)
@@ -125,7 +125,7 @@ const SignUp = () => {
 
     return (
         <div>
-            <FavAndTitle title={'Bistro Boss | Sign Up'}></FavAndTitle>
+            <FavAndTitle title={'Happy Mart | Sign Up'}></FavAndTitle>
             <div>
                 <CoverHead title={'Sign Up your Account'} coverImg={coverImg}></CoverHead>
             </div>
@@ -146,12 +146,12 @@ const SignUp = () => {
                                     </label>
                                     <input type="text" placeholder="Name" name='name' className="input input-bordered" required />
                                 </div>
-                                <div className="form-control">
+                                {/* <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Photo</span>
                                     </label>
                                     <input type="file" name="photo" className="file-input file-input-bordered w-full max-w-xs" />
-                                </div>
+                                </div> */}
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>

@@ -1,7 +1,30 @@
-import { IoMdArrowDropdown } from "react-icons/io";
+import { useRef, useState } from "react";
+import logo from '../../src/assets/images/logo.png';
+import { Link, NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa6";
+import { FaShoppingCart } from "react-icons/fa";
+// import useAuth from "../../hook/auth/useAuth";
+
 
 const NavBar = () => {
+    const [state, setState] = useState(false)
+    // const { user, logOut, loading } = useAuth();
+    // const profileRef = useRef()
+    // if (loading) {
+    //     return <span className="loading loading-ring loading-lg"></span>
+    // }
+    // console.log(user)
+
+    // const navigation = [
+    //     { title: "Home", path: '/' },
+    //     { title: "Gallery", path: '/gallery' },
+    //     { title: "Trainer", path: '/trainer' },
+    //     { title: "Classes", path: '/classes' },
+    //     { title: "Dashboard", path: '/dashboard' },
+    //     { title: "Forums", path: '/forum' },
+
+    // ]
+
     const nav = [
 
         { title: 'Home & Living', Path: '/arrival' },
@@ -9,24 +32,89 @@ const NavBar = () => {
         { title: 'Kitchen & Dining', Path: '/kitchen' },
         { title: 'New Arrival', Path: '/kitchen' },
     ]
+
+    const handleSignOut = () => {
+        // logOut()
+        //     .then()
+        //     .catch()
+    }
+
+
     return (
-        <div className="bg-red-500 py-3">
-            <div className="flex w-[80%] mx-auto items-center justify-between">
-                <div className="bg-white p-4 rounded-lg">
-                    <div className="flex items-center justify-between text-purple-600 cursor-pointer">
-                        <FaBars className="text-2xl" />
-                        <h3 className="px-3 text-xl font-semibold uppercase">Categories</h3>
-                        <IoMdArrowDropdown className="text-2xl" />
+        <div className=" font-Cinzel z-20 uppercase font-bold  w-full bg-red-500 py-3">
+            <nav className="md:static md:text-sm">
+                <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8 text-white">
+                    <div className="flex items-center justify-between md:block">
+                        <div className="md:hidden">
+
+                            <button className="text-gray-500 hover:text-gray-800"
+                                onClick={() => setState(!state)}
+                            >
+
+                                {
+                                    state ? (
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                                        </svg>
+                                    ) : (
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                        </svg>
+                                    )
+                                }
+                            </button>
+                        </div>
+                        {/* <Link to='/'>
+                            <img className="w-[60px] h-[50px]" src={logo} alt="" />
+                            <p>Lime Life</p>
+                        </Link> */}
+                        <div className="md:block lg:hidden">
+                            <Link to='/'>
+                                <img className="w-[60px] h-[50px]" src={logo} alt="" />
+                                <p>Happy Mart</p>
+                            </Link>
+                        </div>
+                        <button className="btn bg-white hidden md:hidden lg:block font-medium uppercase"><FaBars className="text-xl text-black inline-block items-center"></FaBars> Categories</button>
+                        <div className="md:hidden">
+                            <FaShoppingCart className="text-xl text-white"></FaShoppingCart>
+                        </div>
+
+                    </div>
+                    <div className={`flex-1 pb-3 mt-8 md:block md:pb-0 md:mt-0 ${state ? 'block' : 'hidden'}`}>
+                        <ul className="justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
+                            {
+                                nav.map((item, idx) => {
+                                    return (
+                                        <li key={idx}>
+                                            <NavLink to={item.Path} className={({ isActive, isPending }) =>
+                                                isPending ? "pending" : isActive ? "text-white underline py-3 px-6 rounded-lg bg-[#51FF04] block" : ""
+                                            }>
+                                                {item.title}</NavLink>
+                                        </li>
+                                    )
+                                })
+                            }
+                            {/* <span className='hidden w-px h-6 bg-gray-300 md:block'></span> */}
+                            {/* <div className='space-y-3 items-center gap-x-6 md:flex md:space-y-0 hidden'>
+
+
+                                <button className="hidden w-10 h-10 outline-none rounded-full ring-offset-2 ring-gray-200 lg:focus:ring-2 lg:block"
+                                >
+                                    <img
+                                        // src={user.photoURL}
+                                        className="w-full h-full rounded-full"
+                                    />
+                                </button>
+                                <button onClick={handleSignOut} className="block py-3 px-4 font-medium text-center text-white bg-[#51FF04] hover:bg-lime-600 active:bg-lime-700 active:shadow-none rounded-lg shadow md:inline">Sign Out</button>
+
+                                <li>
+                                    <NavLink to='/login' className="block py-3 px-4 font-medium text-center text-white bg-[#51FF04] hover:bg-lime-600 active:bg-lime-700 active:shadow-none rounded-lg shadow md:inline">Sign in</NavLink>
+                                </li>
+                            </div> */}
+                        </ul>
                     </div>
                 </div>
-                <div>
-                    <ul className="text-xl font-semibold uppercase text-white flex items-center space-x-7">
-                        {
-                            nav.map((item) => <li key={item.title} className="cursor-pointer flex justify-between">{item.title}</li>)
-                        }
-                    </ul>
-                </div>
-            </div>
+            </nav>
         </div>
     );
 };

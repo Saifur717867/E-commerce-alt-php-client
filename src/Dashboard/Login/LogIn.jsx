@@ -8,7 +8,7 @@ import app from "../../Firebase/firebase.config";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import CoverHead from "../../Components/CoverHead";
-import FavAndTitle from "./FavAndTitle";
+import FavAndTitle from "../../Components/FavAndTitle";
 
 
 const LogIn = () => {
@@ -33,7 +33,7 @@ const LogIn = () => {
                 })
                 // console.log(result.data)
                 if (loggedInUser) {
-                    navigate(location?.state ? location.state : '/')
+                    navigate(location?.state ? location.state : '/dashboard/admin')
                 }
                 // const user = {email};
                 // // get access token 
