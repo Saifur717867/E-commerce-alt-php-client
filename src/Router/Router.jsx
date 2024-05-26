@@ -19,6 +19,7 @@ import ReportAll from "../Report/ReportAll";
 import PrivateRouter from "./PrivateRouter";
 import LogIn from './../Dashboard/Login/LogIn';
 import SignUp from "../Dashboard/SignUp/SignUp";
+import Analytics from "../Pages/Analytics/Analytics";
 
 
 
@@ -111,6 +112,10 @@ export const router = createBrowserRouter([
             {
                 path: "report",
                 element: <ReportAll></ReportAll>
+            },
+            {
+                path: "analytics",
+                element: <Analytics></Analytics>
             },
         ]
     }

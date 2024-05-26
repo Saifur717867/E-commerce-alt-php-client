@@ -85,6 +85,14 @@ const DashboardLayOut = () => {
                                     <p>Report</p>
                                 </div>
                             </NavLink></li>
+                            <li className="font-semibold"><NavLink to='/dashboard/analytics' className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? " underline py-3 bg-blue-100 text-purple-500 block" : "py-3 block"
+                            }>
+                                <div className="flex justify-start items-center ml-6">
+                                    <FiFileText className="mr-4 text-xl"></FiFileText >
+                                    <p>Analytics</p>
+                                </div>
+                            </NavLink></li>
                         </ul>
                     </div>
                 </div>
